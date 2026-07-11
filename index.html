@@ -259,6 +259,98 @@
                 </article>
 
             </div>
+
+<!-- БЛОК ПРЕДЗАКАЗА К ПРАЗДНИКАМ -->
+        <section style="background: #fff; border: 1px solid #fce7f3; padding: 35px; border-radius: 16px; margin-top: 50px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);">
+            <h2 style="text-align: center; color: #db2777; font-size: 1.8rem; margin-top: 0; margin-bottom: 10px;">💝 Предзаказ к праздникам</h2>
+            <p style="text-align: center; color: #715c5a; margin-bottom: 25px; font-size: 0.95rem;">
+                Планируете подарок заранее? Заполните форму, чтобы забронировать место на изготовление десерта к праздничной дате.
+            </p>
+
+            <form id="preorderForm" style="display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto;">
+                
+                <!-- Выбор праздника -->
+                <div>
+                    <label style="display: block; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem;">Выберите повод или праздник:</label>
+                    <select id="holiday" style="width: 100%; padding: 10px; border: 1px solid #fbcfe8; border-radius: 8px; background: #fffafb; color: #4a3e3d; box-sizing: border-box;">
+                        <option value="День матери">День матери</option>
+                        <option value="Новый год">Новый год</option>
+                        <option value="День влюбленных (14 февраля)">День влюбленных (14 февраля)</option>
+                        <option value="8 Марта">8 Марта</option>
+                        <option value="День рождения / Другой повод">День рождения / Другой повод</option>
+                    </select>
+                </div>
+
+                <!-- Имя клиента -->
+                <div>
+                    <label style="display: block; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem;">Ваше имя:</label>
+                    <input type="text" id="clientName" placeholder="Например, Анна" required style="width: 100%; padding: 10px; border: 1px solid #fbcfe8; border-radius: 8px; background: #fffafb; color: #4a3e3d; box-sizing: border-box;">
+                </div>
+
+                <!-- Желаемая дата -->
+                <div>
+                    <label style="display: block; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem;">Желаемая дата получения (самовывоз/доставка):</label>
+                    <input type="text" id="deliveryDate" placeholder="Например, 14 октября к 12:00" required style="width: 100%; padding: 10px; border: 1px solid #fbcfe8; border-radius: 8px; background: #fffafb; color: #4a3e3d; box-sizing: border-box;">
+                </div>
+
+                <!-- Что именно заказывают -->
+                <div>
+                    <label style="display: block; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem;">Что вы хотите заказать?</label>
+                    <select id="productChoice" style="width: 100%; padding: 10px; border: 1px solid #fbcfe8; border-radius: 8px; background: #fffafb; color: #4a3e3d; box-sizing: border-box;">
+                        <option value="Зефирные Тюльпаны">Зефирные Тюльпаны</option>
+                        <option value="Классический набор (12 шт)">Классический набор (12 шт)</option>
+                        <option value="Зефирные сэндвичи (8 шт)">Зефирные сэндвичи (8 шт)</option>
+                        <option value="Подарочный ассорти-набор">Подарочный ассорти-набор</option>
+                    </select>
+                </div>
+
+                <!-- Кнопки отправки -->
+                <label style="font-weight: bold; margin-top: 5px; font-size: 0.9rem; text-align: center;">Куда отправить заполненную заявку?</label>
+                <div style="display: flex; gap: 10px;">
+                    <button type="button" onclick="sendToMessenger('viber')" style="flex: 1; background-color: #733494; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.95rem;">
+                        🟣 В Viber
+                    </button>
+                    <button type="button" onclick="sendToMessenger('telegram')" style="flex: 1; background-color: #229ED9; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.95rem;">
+                        🔵 В Telegram
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Логика сборки текста и отправки в мессенджеры -->
+        <script>
+        function sendToMessenger(platform) {
+            // Получаем значения из полей формы
+            const holiday = document.getElementById('holiday').value;
+            const name = document.getElementById('clientName').value;
+            const date = document.getElementById('deliveryDate').value;
+            const product = document.getElementById('productChoice').value;
+
+            // Проверяем, заполнил ли пользователь обязательные поля
+            if (!name || !date) {
+                alert("Пожалуйста, заполните ваше имя и желаемую дату получения!");
+                return;
+            }
+
+            // Формируем красивый текст сообщения
+            const messageText = `Здравствуйте! Меня зовут ${name}. Хочу оформить предзаказ к празднику "${holiday}". Изделие: ${product}. Желаемая дата и время: ${date}.`;
+            
+            // Кодируем текст для безопасной передачи в интернет-ссылку
+            const encodedText = encodeURIComponent(messageText);
+
+            if (platform === 'viber') {
+                // ВНИМАНИЕ: Замените номер 79991112233 на реальный номер вашей знакомой (без плюса)
+                const viberNumber = "79991112233";
+                window.location.href = `viber://chat?number=${viberNumber}&text=${encodedText}`;
+            } else if (platform === 'telegram') {
+                // ВНИМАНИЕ: Замените username на реальный юзернейм вашей знакомой в Telegram (без знака @)
+                const tgUsername = "username";
+                window.open(`https://t.me{tgUsername}?text=${encodedText}`, '_blank');
+            }
+        }
+        </script>
+
+            
         </main>
     </div>
 
