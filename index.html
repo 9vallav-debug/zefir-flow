@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нежный зефир ручной работы</title>
+    <style>
+        /* Пастельная цветовая палитра */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #fffafb; /* Мягкий зефирный фон */
+            color: #4a3e3d; /* Темно-шоколадный текст вместо жесткого черного */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Главный экран (Обложка) */
+        .hero {
+            background-color: #ffeef2; /* Нежно-розовый фон */
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px dashed #fbcfe8;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #db2777; /* Насыщенный розовый для акцентов */
+            margin: 0 0 15px 0;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #715c5a;
+            margin: 0 0 25px 0;
+        }
+
+        /* Блок преимуществ */
+        .features {
+            display: flex;
+            gap: 20px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        .feature-item {
+            background: #ffffff;
+            border: 1px solid #fce7f3;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 4px 6px rgba(244, 63, 94, 0.02);
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .feature-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #db2777;
+            margin-bottom: 8px;
+        }
+
+        /* Разделы каталога */
+        h2.section-title {
+            text-align: center;
+            color: #db2777;
+            font-size: 2rem;
+            margin: 50px 0 30px 0;
+            position: relative;
+        }
+
+        /* Сетка товаров */
+        .catalog-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #fce7f3;
+            border-radius: 16px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(219, 39, 119, 0.06);
+        }
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #f3f4f6;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            color: #4a3e3d;
+        }
+        .product-desc {
+            font-size: 0.95rem;
+            color: #715c5a;
+            margin: 0 0 15px 0;
+            height: 60px; /* Фиксированная высота для выравнивания */
+            overflow: hidden;
+        }
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #8c7371;
+        }
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #db2777;
+        }
+
+        /* Кнопки заказа */
+        .order-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-order {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: white;
+            transition: opacity 0.2s;
+        }
+        .btn-order:hover {
+            opacity: 0.9;
+        }
+        .btn-viber { background-color: #733494; } /* Фирменный цвет Viber */
+        .btn-telegram { background-color: #229ED9; } /* Фирменный цвет Telegram */
+
+        /* Подвал / Контакты */
+        footer {
+            background-color: #ffeef2;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 2px dashed #fbcfe8;
+        }
+        .footer-text {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <header class="hero">
+        <div class="container">
+            <h1>Зефирные сладости ручной работы</h1>
+            <p>Натуральный домашний зефир, букеты из зефирных цветов и подарочные наборы для ваших любимых</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- ПРЕИМУЩЕСТВА -->
+        <section class="features">
+            <div class="feature-item">
+                <div class="feature-icon">🍓</div>
+                <div class="feature-title">100% натурально</div>
+                <div class="feature-content">Готовится исключительно на основе натурального ягодного и фруктового пюре без консервантов.</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⏳</div>
+                <div class="feature-title">Всегда свежее</div>
+                <div class="feature-content">Не храню заготовки. Каждая коробка десерта создается строго под заказ к вашей дате.</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎁</div>
+                <div class="feature-title">Красивая упаковка</div>
+                <div class="feature-content">Каждый заказ оформляется в праздничную коробку с атласной лентой и открыткой.</div>
+            </div>
+        </section>
+
+        <!-- КАТАЛОГ ТОВАРОВ -->
+        <main>
+            <h2 class="section-title">Каталог десертов</h2>
+            
+            <div class="catalog-grid">
+                
+                <!-- КАРТОЧКА ТОBAPA 1 -->
+                <article class="product-card">
+                    <img src="https://unsplash.com" alt="Зефирные тюльпаны" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Зефирные Тюльпаны</h3>
+                        <p class="product-desc">Пышный букет из реалистичных зефирных тюльпанов. Вкус: клубника и яблоко.</p>
+                        <div class="product-meta">
+                            <span>Размер: Коробка 20 см</span>
+                            <span class="product-price">35 руб</span>
+                        </div>
+                        <div class="order-buttons">
+                            <!-- Замените 79991112233 на реальный номер вашей знакомой -->
+                            <a href="viber://chat?number=79991112233" class="btn-order btn-viber">Viber</a>
+                            <!-- Замените username на реальный юзернейм в Telegram -->
+                            <a href="https://t.me" target="_blank" class="btn-order btn-telegram">Telegram</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- КАРТОЧКА ТОBAPA 2 -->
+                <article class="product-card">
+                    <img src="https://unsplash.com" alt="Классический зефир" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Классический набор</h3>
+                        <p class="product-desc">Нежные зефирные завитки в сахарной пудре. Ассорти из 3 вкусов: смородина, малина, ваниль.</p>
+                        <div class="product-meta">
+                            <span>Количество: 12 штук</span>
+                            <span class="product-price">20 руб</span>
+                        </div>
+                        <div class="order-buttons">
+                            <a href="viber://chat?number=79991112233" class="btn-order btn-viber">Viber</a>
+                            <a href="https://t.me" target="_blank" class="btn-order btn-telegram">Telegram</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- КАРТОЧКА ТОBAPA 3 -->
+                <article class="product-card">
+                    <img src="https://unsplash.com" alt="Зефирные сендвичи" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-name">Зефирные сэндвичи</h3>
+                        <p class="product-desc">Хрустящее песочное печенье с прослойкой из нежного яблочного зефира и домашней карамели.</p>
+                        <div class="product-meta">
+                            <span>Количество: 8 штук</span>
+                            <span class="product-price">25 руб</span>
+                        </div>
+                        <div class="order-buttons">
+                            <a href="viber://chat?number=79991112233" class="btn-order btn-viber">Viber</a>
+                            <a href="https://t.me" target="_blank" class="btn-order btn-telegram">Telegram</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- ПОДВАЛ И КОНТАКТЫ -->
+    <footer>
+        <div class="container">
+            <p class="footer-text"><strong>Для заказа и уточнения деталей напишите мне в любой мессенджер</strong></p>
+Принимаю заказы минимум за 2-3 дня до вашей даты. Доставка по городу и самовывоз.
