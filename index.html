@@ -166,6 +166,67 @@
             margin-bottom: 20px;
             font-size: 1.1rem;
         }
+   /* Новые пастельные стили для вариантов упаковки */
+        .packaging-section {
+            margin: 60px 0;
+            padding: 20px 0;
+        }
+        .packaging-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .packaging-card {
+            background: #fff;
+            border: 1px solid #fbcfe8;
+            border-radius: 12px;
+            padding: 20px;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(219, 39, 119, 0.01);
+            border-top: 4px solid #db2777; /* Насыщенная пастельная розовая полоса сверху */
+        }
+        .packaging-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+        .packaging-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #db2777;
+            margin-bottom: 8px;
+        }
+        .packaging-desc {
+            font-size: 0.9rem;
+            color: #715c5a;
+            margin: 0;
+        }
+
+        /* Стильная кнопка Instagram */
+        .instagram-btn-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .btn-instagram {
+            display: inline-block;
+            background: linear-gradient(45deg, #fdf2f8, #fce7f3); /* Нежнейший градиент под общую тему */
+            color: #db2777;
+            border: 1px solid #fbcfe8;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(219, 39, 119, 0.05);
+            transition: transform 0.2s, background 0.2s;
+        }
+        .btn-instagram:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(45deg, #fce7f3, #fbcfe8);
+        }
+    
+    
     </style>
 </head>
 <body>
@@ -260,6 +321,48 @@
 
             </div>
 
+
+<!-- БЛОК ВАРИАНТЫ УПАКОВКИ -->
+        <section class="packaging-section">
+            <h2 class="section-title">Варианты оформления заказа</h2>
+            <div class="packaging-grid">
+                
+                <div class="packaging-card">
+                    <div class="packaging-icon">🎁</div>
+                    <div class="packaging-name">Шляпные коробки</div>
+                    <p class="packaging-desc">Круглые подарочные коробки с полностью прозрачной крышкой. Идеальный обзор цветов.</p>
+                </div>
+
+                <div class="packaging-card">
+                    <div class="packaging-icon">💐</div>
+                    <div class="packaging-name">Зефирные букеты</div>
+                    <p class="packaging-desc">Классическое цветочное оформление в нежной многослойной корейской бумаге.</p>
+                </div>
+
+                <div class="packaging-card">
+                    <div class="packaging-icon">🧺</div>
+                    <div class="packaging-name">Плетеные корзины</div>
+                    <p class="packaging-desc">Роскошный объемный формат композиций. Премиальный выбор для юбилеев и торжеств.</p>
+                </div>
+
+                <div class="packaging-card">
+                    <div class="packaging-icon">💝</div>
+                    <div class="packaging-name">Коробки-комплименты</div>
+                    <p class="packaging-desc">Небольшие квадратные коробочки. Прекрасный бюджетный знак внимания или подарок коллегам.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- КНОПКА-ССЫЛКА НА INSTAGRAM -->
+        <div class="instagram-btn-container">
+            <p style="color: #715c5a; margin-bottom: 12px; font-size: 1rem;">Хотите увидеть больше свежих работ и отзывов клиентов из Гродно?</p>
+            <a href="https://instagram.com" target="_blank" class="btn-instagram">
+                📸 Наш Instagram: @teresa_kr_r
+            </a>
+        </div>
+
+            
 <!-- БЛОК ПРЕДЗАКАЗА К ПРАЗДНИКАМ -->
         <section style="background: #fff; border: 1px solid #fce7f3; padding: 35px; border-radius: 16px; margin-top: 50px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);">
             <h2 style="text-align: center; color: #db2777; font-size: 1.8rem; margin-top: 0; margin-bottom: 10px;">💝 Предзаказ к праздникам</h2>
