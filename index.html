@@ -316,7 +316,7 @@
                         </div>
                         <div class="order-buttons">
                             <!-- Замените 79991112233 на реальный номер вашей знакомой -->
-                            <a href="viber://chat?number=79991112233" class="btn-order btn-viber">Viber</a>
+                            <a href="viber://chat?number=375292871857" class="btn-order btn-viber">Viber</a>
                             <!-- Замените username на реальный юзернейм в Telegram -->
                             <a href="https://t.me" target="_blank" class="btn-order btn-telegram">Telegram</a>
                         </div>
@@ -334,7 +334,7 @@
                             <span class="product-price">20 руб</span>
                         </div>
                         <div class="order-buttons">
-                            <a href="viber://chat?number=79991112233" class="btn-order btn-viber">Viber</a>
+                            <a href="viber://chat?number=375292871857" class="btn-order btn-viber">Viber</a>
                             <a href="https://t.me" target="_blank" class="btn-order btn-telegram">Telegram</a>
                         </div>
                     </div>
@@ -351,7 +351,7 @@
                             <span class="product-price">25 руб</span>
                         </div>
                         <div class="order-buttons">
-                            <a href="viber://chat?number=79991112233" class="btn-order btn-viber">Viber</a>
+                            <a href="viber://chat?number=375292871857" class="btn-order btn-viber">Viber</a>
                             <a href="https://t.me" target="_blank" class="btn-order btn-telegram">Telegram</a>
                         </div>
                     </div>
@@ -479,15 +479,15 @@
             // Кодируем текст для безопасной передачи в интернет-ссылку
             const encodedText = encodeURIComponent(messageText);
 
-            if (platform === 'viber') {
-                // ВНИМАНИЕ: Замените номер 79991112233 на реальный номер вашей знакомой (без плюса)
-                const viberNumber = "79991112233";
-                window.location.href = `viber://chat?number=${viberNumber}&text=${encodedText}`;
-            } else if (platform === 'telegram') {
-                // ВНИМАНИЕ: Замените username на реальный юзернейм вашей знакомой в Telegram (без знака @)
-                const tgUsername = "username";
-                window.open(`https://t.me{tgUsername}?text=${encodedText}`, '_blank');
-            }
+           if (platform === 'viber') {
+            // Вставляем реальный номер Тересы из Гродно без знака +
+            const viberNumber = "375292871857"; 
+            window.location.href = `viber://chat?number=${viberNumber}&text=${encodedText}`;
+        } else if (platform === 'telegram') {
+            // Сюда можно будет вписать её ник в Телеграм без знака @
+            const tgUsername = "username";
+            window.open(`https://t.me{tgUsername}?text=${encodedText}`, '_blank');
+        }
         }
         </script>
 <!-- БЛОК ЧАСТЫЕ ВОПРОСЫ (FAQ) -->
