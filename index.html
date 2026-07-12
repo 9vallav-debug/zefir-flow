@@ -479,11 +479,22 @@
             // Кодируем текст для безопасной передачи в интернет-ссылку
             const encodedText = encodeURIComponent(messageText);
 
-           if (platform === 'viber') {
-            // Вставляем реальный номер Тересы из Гродно без знака +
-            const viberNumber = "375292871857"; 
-            window.location.href = `viber://chat?number=${viberNumber}&text=${encodedText}`;
-        } else if (platform === 'telegram') {
+            if (platform === 'viber') {
+            const viberNumber = "375292871857";
+            
+            // Магия: автоматически копируем готовый текст заказа в буфер обмена компьютера
+            navigator.clipboard.writeText(messageText).then(function() {
+                // Показываем подсказку пользователю
+                alert("Текст вашего заказа скопирован! После открытия Viber просто нажмите комбинацию клавиш Ctrl + V (или правой кнопкой мыши -> Вставить), чтобы отправить его.");
+                // Открываем сам чат
+                window.location.href = `viber://chat?number=${viberNumber}`;
+            }).catch(function() {
+                // Если браузер запретил копирование, просто перенаправляем в чат
+                window.location.href = `viber://chat?number=${viberNumber}`;
+            });
+        }
+           
+            else if (platform === 'telegram') {
             // Сюда можно будет вписать её ник в Телеграм без знака @
             const tgUsername = "username";
             window.open(`https://t.me{tgUsername}?text=${encodedText}`, '_blank');
